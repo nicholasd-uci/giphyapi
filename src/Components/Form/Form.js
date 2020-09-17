@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import GifContext from '../../utils/GifContext'
 
 const Form = props => {
+
+  const {
+    search,
+    handleInputChange,
+    handleSearchGIPHY
+  } = useContext(GifContext)
   
   return (
     <form>
@@ -9,11 +16,11 @@ const Form = props => {
         <input
           type="text"
           name="search"
-          value={props.search}
-          onChange={props.handleInputChange} />
+          value={search}
+          onChange={handleInputChange} />
       </p>
       <p>
-        <button onClick={props.handleSearchGIPHY}>Search GIPHY</button>
+        <button onClick={handleSearchGIPHY}>Search GIPHY</button>
       </p>
     </form>
   )
